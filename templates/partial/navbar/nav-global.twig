@@ -1,3 +1,23 @@
 <div class="nav__global">
-	<div class="container-fluid"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="w-100 justify-content-between d-flex flex-row align-items-center">
+					<a href="/">
+						<img class="logo" src="{{get_image(options.logo_completo)}}" alt="">
+					</a>
+					{% if menu %}
+
+						<ul class="d-flex list-unstyled mb-0">
+							{% for item in menu.get_items %}
+								<li>
+									<a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

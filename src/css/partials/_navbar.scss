@@ -1,11 +1,31 @@
 @use '../globals/vars';
 
+.g-navbar {
+	a {
+		text-decoration: none;
+	}
+	ul {
+		column-gap: calc(vars.$spacer * 4);
+	}
+
+	border-bottom: 1px solid vars.$ice;
+}
+
 .nav__utils {
 	padding-top: calc(vars.$spacer * 2);
 	padding-bottom: calc(vars.$spacer * 2);
+}
+
+.nav__global {
+	padding-top: calc(vars.$spacer * 3);
+	padding-bottom: calc(vars.$spacer * 3);
 
 	a {
-		text-decoration: none;
+		color: vars.$mainBrown;
+	}
+
+	.logo {
+		max-width: vars.rem-calc(305);
 	}
 }
 
