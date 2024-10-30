@@ -1,0 +1,17 @@
+@function rem-calc($size) {
+	$remSize: calc($size / 16);
+	@return #{$remSize}rem;
+}
+
+$mainBrown: #2a1d16;
+$lightBrown: #4e3b31;
+$ice: #e3e0da;
+$yellow: #ffcb05;
+$orange: #f36a21;
+$red: #ee3435;
+$black: #212529;
+$white: #fff;
+
+$gradient: linear-gradient(to right, 0% $red, 100%, $orange);
+
+$spacer: rem-calc(8);
