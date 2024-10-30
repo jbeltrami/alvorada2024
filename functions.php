@@ -23,3 +23,6 @@ function custom_block_category($categories)
 include get_theme_file_path('/includes/timber.php');
 include get_theme_file_path('/includes/woocommerce.php');
 include get_theme_file_path('/includes/front/enqueue.php');
+
+// Hooks
+add_action('wp_enqueue_scripts', 'zor_enqueue');

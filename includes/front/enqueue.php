@@ -4,8 +4,8 @@ function zor_enqueue()
 {
 	$uri = get_theme_file_uri();
 
-	wp_register_style('zor_bootstrap', $uri . 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', []);
-	wp_register_style('zor_style', $uri . '/static/css/index.min.css', ['zor_bootstrap']);
+	wp_register_style('zor_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', []);
+	wp_register_style('zor_style', $uri . '/dist/styles.min.css', ['zor_bootstrap']);
 
 	// Enqueue Styles
 	wp_enqueue_style('zor_style');
