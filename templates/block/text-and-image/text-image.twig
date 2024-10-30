@@ -1,0 +1,45 @@
+{#
+/**
+* Block Name: Text Image
+*
+* This is the template that displays the text image block.
+*/
+#}
+
+{% if is_preview %}
+	<p>
+		Please click on the pencil to edit.
+	</p>
+{% endif %}
+
+
+{% if fields.plano_de_fundo == 'imagem' %}
+	<div id="{{ block.id }}" class="b-text-and-image bg-{{color}} colorful-spacer" style="background: url('{{get_image(fields.imagem_de_fundo).src}}') center center/cover no-repeat;">
+		<div class="container-fluid">
+			<div class="row">
+				{% if position == 'Direita' %}
+					{% include "templates/block/text-and-image/image-right.twig" %}
+				{% endif %}
+
+				{% if position == 'Esquerda' %}
+					{% include "templates/block/text-and-image/image-left.twig" %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% else %}
+	<div id="{{ block.id }}" class="b-text-and-image bg-{{color}} block-spacer" style="background-color: {{fields.cor_do_plano_de_fundo}}">
+		<div class="container-fluid">
+			<div class="row">
+				{% if position == 'Direita' %}
+					{% include "templates/block/text-and-image/image-right.twig" %}
+				{% endif %}
+
+				{% if position == 'Esquerda' %}
+					{% include "templates/block/text-and-image/image-left.twig" %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endif %}
