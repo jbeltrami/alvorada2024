@@ -1,0 +1,49 @@
+@use '../globals/vars';
+
+.nav__utils {
+	padding-top: calc(vars.$spacer * 2);
+	padding-bottom: calc(vars.$spacer * 2);
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.nav__search {
+	padding: vars.$spacer;
+	background-color: vars.$lightBrown;
+	display: flex;
+	border-radius: calc(vars.$spacer * 4);
+
+	input,
+	button {
+		background-color: transparent;
+		border: none;
+		color: vars.$white;
+	}
+
+	input::-webkit-input-placeholder {
+		/* Chrome/Opera/Safari */
+		color: white;
+		text-align: center;
+	}
+	input::-moz-placeholder {
+		/* Firefox 19+ */
+		color: white;
+		text-align: center;
+	}
+	input:-ms-input-placeholder {
+		/* IE 10+ */
+		color: white;
+		text-align: center;
+	}
+	input:-moz-placeholder {
+		/* Firefox 18- */
+		color: white;
+		text-align: center;
+	}
+	input::placeholder {
+		color: white;
+		text-align: center;
+	}
+}

@@ -7,6 +7,7 @@
 
 	{% include 'html-header.twig' %}
 	<body class="{{ body_class }}" data-template="base.twig">
+		{% include "partial/navbar/navbar.twig" %}
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}
