@@ -31,7 +31,7 @@ include get_theme_file_path('/includes/blocks/ctas.php');
 include get_theme_file_path('/includes/blocks/infos.php');
 include get_theme_file_path('/includes/blocks/richtext.php');
 include get_theme_file_path('/includes/blocks/related-posts.php');
-
+include get_theme_file_path('/includes/blocks/products-carousel.php');
 // Hooks
 add_action('wp_enqueue_scripts', 'zor_enqueue');
 add_action('acf/init', 'zor_text_image');
@@ -39,3 +39,4 @@ add_action('acf/init', 'zor_ctas');
 add_action('acf/init', 'zor_infos');
 add_action('acf/init', 'zor_richtext');
 add_action('acf/init', 'zor_related_posts');
+add_action('acf/init', 'zor_products_carousel');

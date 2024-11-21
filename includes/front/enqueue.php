@@ -6,22 +6,23 @@ function zor_enqueue()
 
 	wp_register_style('zor_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', []);
 	wp_register_style('zor_style', $uri . '/dist/styles.min.css', ['zor_bootstrap']);
+	wp_register_style('lib_splide_css', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', []);
 
 	// Enqueue Styles
 	wp_enqueue_style('zor_style');
 	wp_enqueue_style('zor_bootstrap');
+	wp_enqueue_style('lib_splide_css');
 
 
 	// Register Scripts
-	wp_register_script('zor_functions', $uri . '/static/js/index.min.js', ['zor_bootstrap_js'], '', true);
-
-	wp_register_script('zor_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['zor_popper'], '', true);
-
-
 	wp_register_script('zor_popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js', [], '', true);
+	wp_register_script('lib_splide_js', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', [], '', true);
+	wp_register_script('zor_bootstrap_js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['zor_popper'], '', true);
+	wp_register_script('zor_functions', $uri . '/dist/index.js', ['lib_splide_js', 'zor_bootstrap_js'], '', true);
 
 	// Enqueue Scripts
-	wp_enqueue_script('zor_functions');
-	wp_enqueue_script('zor_bootstrap_js');
 	wp_enqueue_script('zor_popper');
+	wp_enqueue_script('lib_splide_js');
+	wp_enqueue_script('zor_bootstrap_js');
+	wp_enqueue_script('zor_functions');
 }

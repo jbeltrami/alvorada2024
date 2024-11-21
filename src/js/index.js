@@ -1,3 +1,3 @@
 import '../css/index.scss';
 
-console.log('hello zor');
+import './splideStarter.js';

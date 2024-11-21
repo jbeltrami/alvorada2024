@@ -1,0 +1,37 @@
+@use '../../globals/vars';
+
+.product-carousel__item {
+	background: linear-gradient(180deg, #e3e0da 60%, #c2bfb8 100%);
+	color: vars.$white;
+	text-decoration: none;
+	border-radius: calc(vars.$spacer * 3);
+	padding-top: calc(vars.$spacer * 3);
+
+	.actions {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		align-items: center;
+	}
+
+	.actions span {
+		width: calc(vars.$spacer * 7);
+		height: calc(vars.$spacer * 7);
+		background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
+		display: inline-flex;
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		justify-self: end;
+		transition: background 300ms ease;
+	}
+
+	&:hover {
+		.actions span {
+			background: linear-gradient(90deg, vars.$lightBrown 0%, vars.$mainBrown 100%);
+
+			svg path {
+				fill: vars.$yellow;
+			}
+		}
+	}
+}
