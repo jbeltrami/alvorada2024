@@ -1,0 +1,42 @@
+// Define the base spacing unit
+$base-spacing: 8px;
+
+// Define the number of steps
+$steps: 10;
+
+// Loop to generate utility classes for margin and padding
+@for $i from 1 through $steps {
+	// Margin utilities
+	.m-all-#{$i} {
+		margin: $i * $base-spacing;
+	}
+	.mt-#{$i} {
+		margin-top: $i * $base-spacing;
+	}
+	.mr-#{$i} {
+		margin-right: $i * $base-spacing;
+	}
+	.mb-#{$i} {
+		margin-bottom: $i * $base-spacing;
+	}
+	.ml-#{$i} {
+		margin-left: $i * $base-spacing;
+	}
+
+	// Padding utilities
+	.p-all-#{$i} {
+		padding: $i * $base-spacing;
+	}
+	.pt-#{$i} {
+		padding-top: $i * $base-spacing;
+	}
+	.pr-#{$i} {
+		padding-right: $i * $base-spacing;
+	}
+	.pb-#{$i} {
+		padding-bottom: $i * $base-spacing;
+	}
+	.pl-#{$i} {
+		padding-left: $i * $base-spacing;
+	}
+}
