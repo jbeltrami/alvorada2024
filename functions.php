@@ -46,3 +46,10 @@ add_action('acf/init', 'zor_infos');
 add_action('acf/init', 'zor_richtext');
 add_action('acf/init', 'zor_related_posts');
 add_action('acf/init', 'zor_products_carousel');
+
+
+// Disable wpautop globally for content
+remove_filter('the_content', 'wpautop');
+
+// Disable wpautop globally for excerpts
+remove_filter('the_excerpt', 'wpautop');
