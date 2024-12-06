@@ -1,21 +1,21 @@
 @use './vars';
 
 .block-spacer {
-	margin-top: calc(vars.$spacer * 5);
-	margin-bottom: calc(vars.$spacer * 5);
+	margin-top: calc(vars.$spacer * 10);
+	margin-bottom: calc(vars.$spacer * 10);
 	@media (min-width: 1440px) {
-		margin-top: calc(vars.$spacer * 10);
-		margin-bottom: calc(vars.$spacer * 10);
+		margin-top: calc(vars.$spacer * 20);
+		margin-bottom: calc(vars.$spacer * 20);
 	}
 }
 
 .colorful-spacer {
-	padding-top: calc(vars.$spacer * 5);
-	padding-bottom: calc(vars.$spacer * 5);
+	padding-top: calc(vars.$spacer * 10);
+	padding-bottom: calc(vars.$spacer * 10);
 
 	@media (min-width: 1440px) {
-		padding-top: calc(vars.$spacer * 10);
-		padding-bottom: calc(vars.$spacer * 10);
+		padding-top: calc(vars.$spacer * 20);
+		padding-bottom: calc(vars.$spacer * 20);
 	}
 }
 
@@ -29,4 +29,34 @@
 	color: vars.$white;
 	background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
 	text-decoration: none;
+}
+
+.card_label {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	align-items: center;
+}
+
+.card {
+	.card_label span {
+		width: calc(vars.$spacer * 7);
+		height: calc(vars.$spacer * 7);
+		background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
+		display: inline-flex;
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		justify-self: end;
+		transition: background 300ms ease;
+	}
+
+	&:hover {
+		.card_label span {
+			background: linear-gradient(90deg, vars.$lightBrown 0%, vars.$mainBrown 100%);
+
+			svg path {
+				fill: vars.$yellow;
+			}
+		}
+	}
 }
