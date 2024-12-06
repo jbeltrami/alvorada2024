@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	{% include "/components/store/store-intro.twig" %}
+
+	<div
+		class="container">
+
+		<div
+			class="loop row">
+			{% for post in products %}
+				{% include ["views/woo/tease-product.twig"] %}
+			{% endfor %}
+		</div>
+	</div>
+
+	{% do action('woocommerce_after_shop_loop') %}
+	{% do action('woocommerce_after_main_content') %}
+
+{% endblock %}
