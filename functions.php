@@ -23,6 +23,7 @@ function custom_block_category($categories)
 include get_theme_file_path('/includes/timber.php');
 include get_theme_file_path('/includes/woocommerce.php');
 include get_theme_file_path('/includes/front/enqueue.php');
+include get_theme_file_path('/includes/front/allowed-blocks.php');
 
 
 // Include Blocks
@@ -36,6 +37,9 @@ include get_theme_file_path('/includes/blocks/products-carousel.php');
 // Hooks
 add_action('wp_enqueue_scripts', 'zor_enqueue');
 add_action('after_setup_theme', 'theme_add_woocommerce_support');
+add_filter('allowed_block_types_all', 'alvorada_allowed_blocks');
+
+// Block hooks
 add_action('acf/init', 'zor_text_image');
 add_action('acf/init', 'zor_ctas');
 add_action('acf/init', 'zor_infos');
