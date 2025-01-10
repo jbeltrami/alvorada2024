@@ -2,27 +2,30 @@
 	<div
 		class="col-lg-4 col-md-6 single-product mb-5">
 		<a
-			href="{{ post.link }}" class="card-effect">
+			href="{{ post.link }}" class="product-card card d-block card-effect">
+
+			<img
+				class="img-fluid w-100 d-block product-card__thumb"
+				src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}"/>
+
 			<div
-				class="product-card">
-				<img
-					class="img-fluid w-100 d-block product-card__thumb"
-					src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}"/>
-
+				class="card_label actions p-all-3">
 				<div
-					class="product-card__content">
-					<h4
-						class="product-card__title">
-						{{ post.title }}
-					</h4>
-
+					class="text-wrapper">
 					<p
-						class="product-card__price">
-						R$
-						{{ post._price }}
+						class="mb-0 text-mainBrown">
+						{{ post.title }}
+					</p>
+					<p
+						class="mb-0 text-mainBrown">
+						{{post._price}}
 					</p>
 				</div>
+				<span>
+					{% include "icons/plus.twig" %}
+				</span>
 			</div>
+
 		</a>
 	</div>
 {% endblock %}

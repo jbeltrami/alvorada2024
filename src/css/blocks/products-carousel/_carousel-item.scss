@@ -1,9 +1,6 @@
 @use '../../globals/vars';
+@use '../../globals/utils';
 
 .product-carousel__item {
-	background: linear-gradient(180deg, #e3e0da 60%, #c2bfb8 100%);
-	color: vars.$white;
-	text-decoration: none;
-	border-radius: calc(vars.$spacer * 3);
-	padding-top: calc(vars.$spacer * 3);
+	@extend .product-card;
 }
