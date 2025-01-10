@@ -2,7 +2,7 @@ console.log('erro');
 document.addEventListener('DOMContentLoaded', function () {
 	return document.querySelectorAll('.splide').forEach((el, idx, arr) => {
 		const splideOptions = {
-			type: 'loop',
+			// type: 'loop',
 			perPage: 3,
 			gap: '1.5rem',
 			breakpoints: {
