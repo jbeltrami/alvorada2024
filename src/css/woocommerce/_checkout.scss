@@ -1,0 +1,24 @@
+@use '../globals/vars';
+@use '../globals/utils';
+@use 'sass:color';
+
+.woocommerce-checkout {
+	#payment {
+		background: vars.$ice;
+
+		.woocommerce-privacy-policy-link {
+			color: vars.$mainBrown;
+		}
+		.button {
+			@extend .cta_button;
+		}
+
+		div.payment_box {
+			background: darken(vars.$ice, 10%);
+
+			&::before {
+				border-bottom-color: darken(vars.$ice, 10%);
+			}
+		}
+	}
+}

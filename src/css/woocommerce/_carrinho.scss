@@ -1,0 +1,37 @@
+@use '../globals/utils';
+@use '../globals/vars';
+
+.wc-proceed-to-checkout a,
+.coupon .button,
+.cart .button,
+.button.wc-backward {
+	@extend .cta_button;
+}
+
+.woocommerce-cart-form,
+.cart-collaterals {
+	a:not(.checkout-button) {
+		color: vars.$mainBrown;
+	}
+}
+
+.coupon {
+	display: none;
+	.input-text {
+		width: 75%;
+	}
+}
+
+.woocommerce-message,
+.woocommerce-info {
+	border-top-color: vars.$orange;
+	background-color: vars.$ice;
+
+	&::before {
+		color: vars.$orange;
+	}
+
+	a {
+		color: vars.$mainBrown;
+	}
+}
