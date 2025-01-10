@@ -1,13 +1,13 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-	{% include '/components/store/store-intro.twig' %}
-	{% do action('woocommerce_before_single_product') %}
 
 	<article
 		itemscope
 		itemtype="http://schema.org/Product"
 		class="single-product-details {{ post.class }} container my-5">
+
+		{# Voltar para a loja #}
 		<div
 			class="row my-4">
 			<div
@@ -22,6 +22,7 @@
 
 		<div
 			class="row">
+			{# Carrossel #}
 			<div
 				class="entry-images col-lg-6">
 				{% if (post._product_image_gallery|split(',')|length) > 1 %}
@@ -124,15 +125,42 @@
 					{{ post.content }}
 				</p>
 
-				<div
-					class="summary entry-summary">
-					{% do action('woocommerce_single_product_summary') %}
-				</div>
+				<form
+					class="cart"
+					action="{{ function('esc_url', function('wc_get_cart_url')) }}" method="post"
+					enctype="multipart/form-data">
+					<!-- Hidden field for the product ID -->
+					<input
+					type="hidden"
+						name="add-to-cart"
+						value="{{ product.get_id }}">
+
+					<!-- Quantity Selector -->
+					<div
+						class="d-flex  align-items-center justify-content-start gap-2 quantity">
+						<label
+							for="quantity_{{ product.get_id }}">
+							Quantidade:
+						</label>
+						<input
+							type="number"
+							id="quantity_{{ product.get_id }}"
+							class="input-text qty text "
+							name="quantity"
+							value="1"
+							min="1"
+							step="1">
+					</div>
+
+					<button
+						type="submit"
+						class="cta_button my-3 single_add_to_cart_button">
+						Adicionar ao carrinho
+					</button>
+				</form>
 			</div>
 		</div>
 	</article>
 
-	{# {% include ["views/woo/tease-product.twig"] with { products: related_products } %} #}
 
-	{% do action('woocommerce_after_single_product') %}
 {% endblock %}

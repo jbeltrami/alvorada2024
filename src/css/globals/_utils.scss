@@ -29,6 +29,14 @@
 	color: vars.$white;
 	background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
 	text-decoration: none;
+	border: none;
+	transition: 350ms ease;
+
+	&:hover,
+	&:active {
+		background: linear-gradient(90deg, vars.$lightBrown 0%, vars.$mainBrown 100%);
+		color: vars.$yellow;
+	}
 }
 
 .card_label {

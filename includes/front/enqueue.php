@@ -24,5 +24,6 @@ function zor_enqueue()
 	wp_enqueue_script('zor_popper');
 	wp_enqueue_script('lib_splide_js');
 	wp_enqueue_script('zor_bootstrap_js');
+	wp_enqueue_script('wc-add-to-cart'); // Enqueue WooCommerce's AJAX add-to-cart script
 	wp_enqueue_script('zor_functions');
 }
