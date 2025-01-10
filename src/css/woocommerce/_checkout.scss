@@ -14,10 +14,10 @@
 		}
 
 		div.payment_box {
-			background: darken(vars.$ice, 10%);
+			background: color.adjust(vars.$ice, $lightness: -10%);
 
 			&::before {
-				border-bottom-color: darken(vars.$ice, 10%);
+				border-bottom-color: color.adjust(vars.$ice, $lightness: -10%);
 			}
 		}
 	}
