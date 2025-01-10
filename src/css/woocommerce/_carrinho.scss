@@ -1,10 +1,7 @@
 @use '../globals/utils';
 @use '../globals/vars';
 
-.wc-proceed-to-checkout a,
-.coupon .button,
-.cart .button,
-.button.wc-backward {
+a.button.wc-forward {
 	@extend .cta_button;
 }
 
@@ -12,6 +9,9 @@
 .cart-collaterals {
 	a:not(.checkout-button) {
 		color: vars.$mainBrown;
+	}
+	button.button {
+		@extend .cta_button;
 	}
 }
 

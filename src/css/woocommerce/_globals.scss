@@ -1,17 +1,27 @@
 @use '../globals/utils';
 @use '../globals/vars';
 
-.woocommerce {
-	.button {
-		@extend .cta_button;
-	}
+// .woocommerce {
+// 	.button {
+// 		@extend .cta_button;
+// 	}
 
+// 	a {
+// 		color: vars.$mainBrown;
+// 	}
+// }
+
+.woocommerce-MyAccount-navigation,
+.woocommerce-MyAccount-content {
 	a {
-		color: vars.$mainBrown;
-	}
-}
+		color: vars.$lightBrown;
 
-.woocommerce-MyAccount-navigation {
+		&:hover,
+		&:active {
+			color: vars.$mainBrown;
+			text-decoration: none;
+		}
+	}
 	ul {
 		list-style-type: none;
 		li {
