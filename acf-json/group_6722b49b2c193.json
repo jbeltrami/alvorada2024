@@ -60,7 +60,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "general-options"
+                "value": "options"
             }
         ]
     ],
@@ -73,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736535207
+    "modified": 1736544864
 }
