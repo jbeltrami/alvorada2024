@@ -1,4 +1,3 @@
-console.log('erro');
 document.addEventListener('DOMContentLoaded', function () {
 	return document.querySelectorAll('.splide').forEach((el, idx, arr) => {
 		const splideOptions = {
