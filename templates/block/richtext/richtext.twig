@@ -7,17 +7,21 @@
 #}
 
 {% if is_preview %}
-  <p>
-    Richtext Block
-  </p>
+	<p>
+		Bloco: Editor WYSIWYG
+	</p>
 {% endif %}
 
-<div class="b-richtext block-spacer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1">
-        {{ fields.texto }}
-      </div>
-    </div>
-  </div>
+<div
+	class="b-richtext block-spacer">
+	<div
+		class="container-fluid">
+		<div
+			class="row">
+			<div
+				class="col-lg-10 offset-lg-1">
+				{{ fields.texto }}
+			</div>
+		</div>
+	</div>
 </div>

@@ -7,18 +7,24 @@
 #}
 
 {% if is_preview %}
-	<p>
-		Infos Block
-	</p>
+	<h1>
+		Bloco: Infos
+	</h1>
 {% endif %}
 
-<div class="b-infos block-spacer bg-dkbrown" style="background-image: url({{fields.imagem_de_fundo.url}})">
+<div
+	class="b-infos block-spacer bg-dkbrown"
+	style="background-image: url({{fields.imagem_de_fundo.url}})">
 
-	<div class="container-fluid">
+	<div
+		class="container-fluid">
 		{% if fields.intro %}
-			<div class="row align-items-center justify-content-center">
-				<div class="col-lg-6">
-					<div class="richtext">
+			<div
+				class="row align-items-center justify-content-center">
+				<div
+					class="col-lg-6">
+					<div
+						class="richtext">
 						{{fields.intro}}
 					</div>
 				</div>
@@ -26,7 +32,8 @@
 
 		{% endif %}
 
-		<div class="row align-items-stretch justify-content-center infos-wrapper">
+		<div
+			class="row align-items-stretch justify-content-center infos-wrapper">
 			{% for field in fields.infos %}
 				{% include "templates/block/infos/single-info.twig" %}
 			{% endfor %}
