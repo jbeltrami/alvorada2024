@@ -1,0 +1,42 @@
+@use '../globals/vars' as vars;
+
+.pagination-block {
+	.pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+
+		li {
+			padding: 5px;
+			background-color: vars.$mainBrown;
+			color: vars.$white;
+			min-width: 40px;
+			text-align: center;
+			border-radius: 5px;
+
+			button {
+				background-color: transparent;
+				border: 0;
+				border-radius: 0;
+			}
+
+			a {
+				color: vars.$white;
+				text-decoration: none;
+				border-radius: none;
+				transition: 350ms ease;
+			}
+
+			&.current {
+				color: vars.$yellow;
+			}
+
+			&:hover {
+				a {
+					color: vars.$orange;
+				}
+			}
+		}
+	}
+}
