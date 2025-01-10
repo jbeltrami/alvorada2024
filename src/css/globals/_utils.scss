@@ -1,21 +1,21 @@
 @use './vars';
 
 .block-spacer {
-	margin-top: calc(vars.$spacer * 10);
-	margin-bottom: calc(vars.$spacer * 10);
+	margin-top: calc(vars.$spacer * 6);
+	margin-bottom: calc(vars.$spacer * 6);
 	@media (min-width: 1440px) {
-		margin-top: calc(vars.$spacer * 20);
-		margin-bottom: calc(vars.$spacer * 20);
+		margin-top: calc(vars.$spacer * 12);
+		margin-bottom: calc(vars.$spacer * 12);
 	}
 }
 
 .colorful-spacer {
-	padding-top: calc(vars.$spacer * 10);
-	padding-bottom: calc(vars.$spacer * 10);
+	padding-top: calc(vars.$spacer * 6);
+	padding-bottom: calc(vars.$spacer * 6);
 
 	@media (min-width: 1440px) {
-		padding-top: calc(vars.$spacer * 20);
-		padding-bottom: calc(vars.$spacer * 20);
+		padding-top: calc(vars.$spacer * 12);
+		padding-bottom: calc(vars.$spacer * 12);
 	}
 }
 
