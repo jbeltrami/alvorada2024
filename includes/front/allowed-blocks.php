@@ -5,7 +5,7 @@ function alvorada_allowed_blocks($allowed_blocks)
 		'acf/ctas',
 		'acf/infos',
 		'acf/products-carousel',
-		'acf/related-posts',
+		'acf/posts-relacionados',
 		'acf/richtext',
 		'acf/text-image',
 	];

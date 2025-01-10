@@ -1,5 +1,5 @@
 <?php
-function zor_related_posts()
+function zor_posts_relacionados()
 {
   // Bail out if function doesn’t exist.
   if (!function_exists('acf_register_block')) {
@@ -8,17 +8,17 @@ function zor_related_posts()
 
   // Register a new block.
   acf_register_block([
-    'name'        => 'related-posts',
-    'title'        => __('Related Posts'),
+    'name'        => 'posts-relacionados',
+    'title'        => __('Posts Relacionados'),
     'description'    => __('A custom block with related posts.'),
-    'render_callback'  => 'zor_related_posts_render_callback',
+    'render_callback'  => 'zor_posts_relacionados_render_callback',
     'category'      => 'alvorada',
     'icon'        => 'admin-comments',
     'keywords'      => array('related', 'posts'),
   ]);
 }
 
-function zor_related_posts_render_callback($block, $content = '', $is_preview = false)
+function zor_posts_relacionados_render_callback($block, $content = '', $is_preview = false)
 {
   $context = Timber::context();
 
@@ -32,5 +32,5 @@ function zor_related_posts_render_callback($block, $content = '', $is_preview = 
   $context['is_preview'] = $is_preview;
 
   // Render the block.
-  Timber::render('/block/related-posts/related-posts.twig', $context);
+  Timber::render('/block/posts-relacionados/posts-relacionados.twig', $context);
 }

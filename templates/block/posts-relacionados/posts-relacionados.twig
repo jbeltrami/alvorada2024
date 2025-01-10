@@ -1,0 +1,81 @@
+{% if is_preview %}
+	Related Posts preview
+{% endif %}
+
+<section
+	class="b-posts-relacionados block-spacer">
+	<div
+		class="container-fluid">
+		{% if fields.titulo is not empty %}
+			<div
+				class="row">
+				<div
+					class="col-lg-12 d-flex align-items-center justify-content-center">
+					<h2
+						class="mb-7">
+						{{fields.titulo}}
+					</h2>
+				</div>
+			</div>
+		{% endif %}
+
+		{% if fields.subtitulo %}
+
+			<div
+				class="row d-flex align-items-center justify-content-center">
+				<div
+					class="col-lg-12">
+					<p
+						class="text-center mb-7">
+						{{fields.subtitulo}}
+					</p>
+				</div>
+			</div>
+		{% endif %}
+
+		<div
+			class="row">
+			<div
+				class="col-12">
+				<div
+					class="posts__grid">
+					{% for post in fields.posts %}
+						{% set thumb = function('get_the_post_thumbnail_url', post.post.ID, '')  %}
+						<div
+							class="blog__post">
+							<a
+								class="blog-card card-effect"
+								href="{{ function('get_permalink', post.post.ID) }}">
+								<div
+									class="blog__thumb">
+									{% if thumb %}
+										<img
+											src="{{ thumb }}" alt="Imagem de capa de {{ post.post.post_title }}"
+											class="img-fluid">
+
+									{% else %}
+										<img
+											src="{{ get_image(options.logo_simples__fundo_escuro).src }}" alt="Logo da empresa"
+											class="img-fluid">
+									{% endif %}
+								</div>
+
+								<div
+									class="blog__teaser">
+									{% if post.post.post_title %}
+										<p
+											class="my-4">
+											{{ post.post.post_title }}
+										</p>
+									{% endif %}
+
+									{# <p> {{ post.preview.length(12).read_more(false) }} </p> #}
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
