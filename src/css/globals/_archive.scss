@@ -1,0 +1,65 @@
+@use './vars';
+
+.posts__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 20px;
+
+	.blog__post {
+		.blog-card {
+			color: vars.$black;
+			text-decoration: none;
+
+			&:hover,
+			&:active {
+				.blog__thumb {
+					&::after {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		.blog__thumb {
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: vars.$black;
+				opacity: 0.4;
+				border-radius: 20px;
+				transition: opacity 350ms ease;
+			}
+			img {
+				aspect-ratio: 1;
+				border-radius: 20px;
+				object-fit: cover;
+				width: 100%;
+			}
+
+			.search__post-type {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: vars.$mainBrown;
+				width: 100%;
+				padding: 10px;
+				border-radius: 0 0 20px 20px;
+				p {
+					color: vars.$yellow;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.blog__teaser {
+			p {
+				text-align: center;
+			}
+		}
+	}
+}

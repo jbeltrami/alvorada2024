@@ -1,0 +1,68 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+	{% set thumb = function('get_the_post_thumbnail_url', post.ID, '')  %}
+	<div
+		class="blog__post">
+		<a
+			class="blog-card card-effect"
+			href="{{ function('get_permalink', post.ID) }}">
+			<div
+				class="blog__thumb">
+				{% if thumb %}
+					<img
+						src="{{ thumb }}" alt="Imagem de capa de {{ post.post_title }}"
+						class="img-fluid">
+
+				{% else %}
+					<img
+						src="{{ get_image(options.logo_simples__fundo_escuro).src }}" alt="Logo da empresa"
+						class="img-fluid">
+				{% endif %}
+				{% if post.post_type == 'product' %}
+					<div
+						class="search__post-type">
+						<p
+							class="">
+							Produto
+						</p>
+					</div>
+				{% endif %}
+
+				{% if post.post_type == 'post' %}
+					<div
+						class="search__post-type">
+						<p
+							class="">
+							Blog post
+						</p>
+					</div>
+				{% endif %}
+
+				{% if post.post_type == 'page' %}
+					<div
+						class="search__post-type">
+						<p
+							class="">
+							Página
+						</p>
+					</div>
+				{% endif %}
+
+
+			</div>
+
+			<div
+				class="blog__teaser">
+				{% if post.post_title %}
+					<p
+						class="mt-2 mb-4">
+						{{ post.post_title }}
+					</p>
+				{% endif %}
+
+				{# <p> {{ post.preview.length(12).read_more(false) }} </p> #}
+			</div>
+		</a>
+	</div>
+{% endblock %}
