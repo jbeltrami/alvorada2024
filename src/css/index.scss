@@ -7,6 +7,8 @@
 @use 'partials/navbar';
 @use 'partials/pagination';
 
+@use 'components/hero/hero';
+
 @use 'blocks/text-and-image/text-image';
 @use 'blocks/products-carousel/carousel-item';
 @use 'blocks/ctas/ctas';

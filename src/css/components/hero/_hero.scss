@@ -1,0 +1,35 @@
+@use '../../globals/vars';
+
+.home-hero {
+	.richtext,
+	.hero__img {
+		position: relative;
+		z-index: 1;
+	}
+
+	.richtext {
+		background-color: vars.$ice;
+	}
+
+	.decoracao_lateral,
+	.decoracao_inferior {
+		position: absolute;
+		z-index: 0;
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
+
+	.decoracao_lateral {
+		right: 0;
+		top: vars.rem-calc(50);
+		max-width: vars.rem-calc(200);
+	}
+
+	.decoracao_inferior {
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		max-width: vars.rem-calc(400);
+	}
+}

@@ -3,18 +3,17 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div
-		class="content-wrapper">
-		<article
-			class="post-type-{{post.post_type}}"
-			id="post-{{post.post.ID}}">
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.post.ID}}">
+			{% if isFrontPage %}
+				{% include "components/hero/hero.twig" %}
+			{% endif %}
+
+
 			{% if not isFrontPage %}
-				<div
-					class="container-fluid block-spacer">
-					<div
-						class="row">
-						<div
-							class="col-lg-10 offset-lg-1">
+				<div class="container-fluid block-spacer">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
 							<h1>
 								{{post.title}}
 							</h1>
@@ -23,8 +22,7 @@
 				</div>
 			{% endif %}
 
-			<section
-				class="article-content">
+			<section class="article-content">
 				{{post.content}}
 			</section>
 		</article>

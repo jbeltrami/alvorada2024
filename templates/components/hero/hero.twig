@@ -1,0 +1,36 @@
+<div class="home-hero bg-ice colorful-spacer position-relative">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 d-flex flex-column align-items-center justify-content-center">
+				<div class="content mb-5">
+					{% if post.meta('texto') %}
+						<div class="richtext">
+							{{ post.meta('texto') }}
+						</div>
+					{% endif %}
+
+					{% if post.meta('cta') %}
+						<a class="cta_button mt-3" href="{{ post.meta('cta').url }}">
+							{{ post.meta('cta').title }}
+						</a>
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="col-lg-6 offset-lg-1 mb-4">
+				{% if post.meta('imagem_de_fundo') %}
+					<img class="img-fluid hero__img" src="{{ get_image(post.meta('imagem_de_fundo')).src }}" alt="{{ get_image(post.meta('imagem_de_fundo')).alt }}"/>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{% if post.meta('decoracao_lateral') %}
+		<img src="{{get_image(post.meta('decoracao_lateral'))}}" alt="Reishi" class="decoration decoracao_lateral"/>
+	{% endif %}
+
+	{% if post.meta('decoracao_inferior') %}
+		<img src="{{get_image(post.meta('decoracao_inferior'))}}" alt="Cordyceps" class="decoration decoracao_inferior"/>
+	{% endif %}
+
+</div>

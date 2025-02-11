@@ -40,3 +40,22 @@
 		}
 	}
 }
+
+.woocommerce-error {
+	[data-id*='billing'] {
+		li {
+			padding: 20px;
+			border: 1px solid vars.$lightBrown;
+			border-radius: 20px;
+			margin-bottom: vars.$spacer;
+
+			a {
+				&:hover,
+				&:active {
+					color: vars.$mainBrown;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
