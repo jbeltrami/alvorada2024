@@ -1,16 +1,13 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-	<div
-		class="mt-8 mb-5">
+	<div class="mt-8 mb-5">
 		{% include "/components/store/store-intro.twig" %}
 	</div>
 
-	<div
-		class="container-fluid">
+	<div class="container-fluid">
 
-		<div
-			class="loop row">
+		<div class="loop row">
 			{% for post in products %}
 				{% include ["views/woo/tease-product.twig"] %}
 			{% endfor %}

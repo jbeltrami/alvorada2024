@@ -1,23 +1,15 @@
 {% block content %}
-	<div
-		class="col-lg-4 col-md-6 single-product mb-5">
-		<a
-			href="{{ post.link }}" class="product-card card d-block card-effect">
+	<div class="col-lg-3 col-md-6 single-product mb-4">
+		<a class="product-card card card-effect h-100" href="{{ post.link }}">
 
-			<img
-				class="img-fluid w-100 d-block product-card__thumb"
-				src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}"/>
+			<img class="img-fluid w-100 d-block product-card__thumb" src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}"/>
 
-			<div
-				class="card_label actions p-all-3">
-				<div
-					class="text-wrapper">
-					<p
-						class="mb-0 text-mainBrown">
+			<div class="card_label actions p-all-3 mt-auto">
+				<div class="text-wrapper">
+					<p class="mb-0 text-mainBrown">
 						{{ post.title }}
 					</p>
-					<p
-						class="mb-0 text-mainBrown">
+					<p class="mb-0 text-mainBrown">
 						{{post._price}}
 					</p>
 				</div>

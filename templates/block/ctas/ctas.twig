@@ -12,18 +12,12 @@
 	</h1>
 {% endif %}
 
-<div
-	class="b-ctas block-spacer"
-	style="background-image: url({{theme.path}}/static/images/cogumelo-bg-ctas.png)">
-	<div
-		class="container-fluid">
+<div class="b-ctas block-spacer" style="background-image: url({{theme.path}}/static/images/cogumelo-bg-ctas.png)">
+	<div class="container-fluid">
 		{% if fields.titulo %}
-			<div
-				class="row align-items-center justify-content-center">
-				<div
-					class="col-lg-10 offset-lg-1">
-					<h2
-						class="text-center mb-7">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<h2 class="text-center mb-7">
 						{{fields.titulo}}
 					</h2>
 				</div>
@@ -31,12 +25,9 @@
 		{% endif %}
 
 		{% if fields.intro %}
-			<div
-				class="row align-items-center justify-content-center">
-				<div
-					class="col-lg-10 offset-lg-1">
-					<p
-						class="text-center mb-7">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<p class="text-center mb-7">
 						{{fields.intro}}
 					</p>
 				</div>
@@ -44,8 +35,7 @@
 
 		{% endif %}
 
-		<div
-			class="row align-items-stretch justify-content-center ctas-wrapper">
+		<div class="row align-items-stretch justify-content-center ctas-wrapper">
 			{% for item in fields.ctas %}
 				{% include "templates/block/ctas/single-cta.twig" %}
 			{% endfor %}
