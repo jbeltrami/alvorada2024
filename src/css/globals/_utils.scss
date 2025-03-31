@@ -76,3 +76,13 @@
 	border-radius: calc(vars.$spacer * 3);
 	padding-top: calc(vars.$spacer * 3);
 }
+
+.blog__content {
+	a {
+		color: vars.$orange;
+
+		&:hover {
+			text-decoration-color: vars.$lightBrown;
+		}
+	}
+}
