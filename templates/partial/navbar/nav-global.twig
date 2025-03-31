@@ -1,23 +1,26 @@
 <div class="nav__global">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-12">
-				<div class="w-100 justify-content-between d-flex flex-row align-items-center">
-					<a href="/">
-						<img class="logo" src="{{get_image(options.logo_completo)}}" alt="">
-					</a>
-					{% if menu %}
+	<nav class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">
+				<img class="logo" src="{{get_image(options.logo_completo)}}" alt="Logo Alvorada Cogumelos">
+			</a>
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			{% if menu %}
+				<ul class="d-flex list-unstyled mb-0 ms-auto pt-sm-4 pt-lg-0">
+					{% for item in menu.get_items %}
+						<li>
+							<a href="{{item.url}}" target="{{item.target}}">
+								{{item.name}}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
 
-						<ul class="d-flex list-unstyled mb-0">
-							{% for item in menu.get_items %}
-								<li>
-									<a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
-								</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
-				</div>
-			</div>
 		</div>
 	</div>
-</div>
+</nav></div>
