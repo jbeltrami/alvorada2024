@@ -135,14 +135,21 @@
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6722bc1cfef4c",
+                        "operator": "==",
+                        "value": "cor_solida"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -150,7 +157,9 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "medium"
         },
         {
             "key": "field_61f1e12c88de1",
@@ -170,11 +179,12 @@
                 "Direita": "Direita",
                 "Esquerda": "Esquerda"
             },
+            "default_value": "Direita",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "Direita",
+            "allow_in_bindings": 1,
             "layout": "vertical",
-            "return_format": "value",
             "save_other_choice": 0
         }
     ],
@@ -196,5 +206,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730329824
+    "modified": 1739309071
 }

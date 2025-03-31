@@ -1,0 +1,55 @@
+<div class="footer bg-mainBrown">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				{% include "templates/icons/logo-full.twig" %}
+			</div>
+			<div class="col-lg-2 offset-lg-1">
+				<h4 class="mb-4">
+					Explore
+				</h4>
+				<nav class="menu menu__main nav-main" role="navigation">
+					<ul class="d-flex list-unstyled mb-0 flex-column">
+						{% for item in menu.get_items %}
+							<li>
+								<a href="{{item.url}}" taget="{{item.target}}">
+									{{item.title}}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</nav>
+			</div>
+
+			<div class="col-lg-3">
+				<h4 class="mb-4">
+					Contate-nos
+				</h4>
+
+				<a href="mailto:contato@alvoradacogumelos.com.br">
+					contato@alvoradacogumelos.com.br
+				</a>
+
+				<hr/>
+
+				<h4 class="mb-4">
+					Atendimento
+				</h4>
+
+				<p>
+					Seg à Sex - Das 9h00 às 17h00
+				</p>
+			</div>
+
+			<div class="col-lg-3">
+				<h4 class="mb-4">
+					Visite
+				</h4>
+
+				<a href="https://www.instagram.com/alvoradacogumelos/" class="social social__instagram" target="_blank">
+					<img src="{{ get_image(options.logo_instagram) }}" alt="Logotipo Instagram" class="img-fluid"/>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
