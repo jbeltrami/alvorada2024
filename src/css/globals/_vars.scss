@@ -33,7 +33,7 @@ $colors: (
 	}
 
 	.text-#{$color} {
-		color: $value;
+		color: $value !important;
 	}
 }
 

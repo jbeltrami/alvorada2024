@@ -36,11 +36,11 @@
 	}
 
 	a {
-		color: v.$white !important;
+		color: v.$white;
 		text-decoration: none;
 		transition: color 350ms ease;
 		&:hover {
-			color: v.$yellow !important;
+			color: v.$yellow;
 		}
 	}
 
