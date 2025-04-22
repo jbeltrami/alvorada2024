@@ -1,24 +1,16 @@
 {% set img = fn('get_post_thumbnail_id', item.produto_singular.ID) %}
 
 
-<div
-	class="mb-4">
-	<a
-		class="product-carousel__item card d-block h-100"
-		href="{{fn('get_permalink', item.produto_singular.ID)}}">
-		<img
-			class="img-fluid"
-			src="{{get_image(img).src}}" srcset="{{get_image(img).srcset}}" sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 1024px) 1024px, 190vw"
-			alt="{{get_image(img).alt}}">
+<div class="mb-4">
+	<a class="product-carousel__item card d-block h-100" href="{{fn('get_permalink', item.produto_singular.ID)}}">
+		<img class="img-fluid" src="{{get_image(img).src}}" srcset="{{get_image(img).srcset}}" sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 1024px) 1024px, 190vw" alt="{{get_image(img).alt}}">
 
-		<div
-			class="card_label actions p-all-3">
-			<p
-				class="mb-0 text-mainBrown">
+		<div class="card_label actions p-all-3">
+			<p class="mb-0 text-mainBrown">
 				{{item.produto_singular.post_title}}
 			</p>
 			<span>
-				{% include "icons/plus.twig" %}
+				{% include "icons/plus.twig" with { fill: '#ffe5b8' } %}
 			</span>
 		</div>
 	</a>

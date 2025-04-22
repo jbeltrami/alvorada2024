@@ -3,11 +3,27 @@
 	@return #{$remSize}rem;
 }
 
+// New Colors
+$blueLgt: #a9deff;
+$blueMd: #67b4e4;
+$blueDk: #3b7ca9;
+$greenLgt: #c9fecf;
+$greenMd: #96cf9c;
+$greenDk: #56976a;
+$yellowLgt: #ffe5b8;
+$yellowMd: #fec662;
+$yellowDk: #be8e44;
+$redLgt: #ffbfb6;
+$redMd: #ef7867;
+$redDk: #c7564e;
+
+// Old Colors
 $mainBrown: #2a1d16;
 $lightBrown: #4e3b31;
 $ice: #e3e0da;
 $yellow: #ffcb05;
 $orange: #f36a21;
+$salmon: #ef7687;
 $red: #ee3435;
 $black: #212529;
 $white: #fff;
@@ -20,11 +36,24 @@ $colors: (
 	'mainBrown': #2a1d16,
 	'lightBrown': #4e3b31,
 	'ice': #e3e0da,
-	'yellow': #ffcb05,
+	'yellow': #fec662,
 	'orange': #f36a21,
+	'salmon': #ef7687,
 	'red': #ee3435,
 	'black': #212529,
 	'white': #fff,
+	'blueLgt': #a9deff,
+	'blueMd': #67b4e4,
+	'blueDk': #3b7ca9,
+	'greenLgt': #c9fecf,
+	'greenMd': #96cf9c,
+	'greenDk': #56976a,
+	'yellowLgt': #ffe5b8,
+	'yellowMd': #fec662,
+	'yellowDk': #be8e44,
+	'redLgt': #ffbfb6,
+	'redMd': #ef7867,
+	'redDk': #c7564e,
 );
 
 @each $color, $value in $colors {

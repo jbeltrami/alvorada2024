@@ -26,16 +26,18 @@
 	padding-left: calc(vars.$spacer * 6);
 	padding-right: calc(vars.$spacer * 6);
 	border-radius: 4rem;
-	color: vars.$white;
-	background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
+	// background: linear-gradient(90deg, vars.$redDk 0%, vars.$redLgt 100%);
+	background-color: vars.$redDk;
+	color: vars.$yellowMd;
 	text-decoration: none;
 	border: none;
 	transition: 350ms ease;
 
 	&:hover,
 	&:active {
-		background: linear-gradient(90deg, vars.$lightBrown 0%, vars.$mainBrown 100%);
-		color: vars.$yellow;
+		// background: linear-gradient(90deg, vars.$yellowDk 0%, vars.$yellowMd 100%);
+		background-color: vars.$yellowMd;
+		color: vars.$redDk;
 	}
 }
 
@@ -49,7 +51,8 @@
 	.card_label span {
 		width: calc(vars.$spacer * 7);
 		height: calc(vars.$spacer * 7);
-		background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
+		// background: linear-gradient(90deg, #ee3435 0%, #f36a21 100%);
+		background: vars.$redDk;
 		display: inline-flex;
 		border-radius: 50%;
 		align-items: center;
@@ -60,17 +63,18 @@
 
 	&:hover {
 		.card_label span {
-			background: linear-gradient(90deg, vars.$lightBrown 0%, vars.$mainBrown 100%);
+			// background: linear-gradient(90deg, vars.$lightBrown 0%, vars.$mainBrown 100%);
+			background: vars.$yellowMd;
 
 			svg path {
-				fill: vars.$yellow;
+				fill: vars.$redDk;
 			}
 		}
 	}
 }
 
 .product-card {
-	background: linear-gradient(180deg, #e3e0da 60%, #c2bfb8 100%);
+	background: linear-gradient(180deg, vars.$yellowLgt 60%, vars.$redLgt 100%);
 	color: vars.$white;
 	text-decoration: none;
 	border-radius: calc(vars.$spacer * 3);
@@ -79,10 +83,10 @@
 
 .blog__content {
 	a {
-		color: vars.$orange;
+		color: vars.$redDk;
 
 		&:hover {
-			text-decoration-color: vars.$lightBrown;
+			text-decoration-color: vars.$yellowLgt;
 		}
 	}
 }

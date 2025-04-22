@@ -1,26 +1,18 @@
-<div
-	class="col-md-4 mb-4">
-	<a
-		class="cta__single card d-block h-100"
-		href="{{item.link.url}}" target="{{item.link.target}}">
+<div class="col-md-4 mb-4">
+	<a class="cta__single card d-block h-100" href="{{item.link.url}}" target="{{item.link.target}}">
 		{% if item.imagem %}
 
-			<img
-				class="img-fluid"
-				src="{{get_image(item.imagem).src}}" srcset="{{get_image(item.imagem).srcset}}" sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 1024px) 1024px, 190vw"
-				alt="{{get_image(item.imagem).alt}}">
+			<img class="img-fluid" src="{{get_image(item.imagem).src}}" srcset="{{get_image(item.imagem).srcset}}" sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 1024px) 1024px, 190vw" alt="{{get_image(item.imagem).alt}}">
 		{% endif %}
 
 		{% if item.texto %}
 
-			<div
-				class="card_label p-all-3">
-				<p
-					class="mb-0 text-white">
+			<div class="card_label p-all-3">
+				<p class="mb-0 text-white">
 					{{item.texto|raw}}
 				</p>
 				<span>
-					{% include "icons/plus.twig" %}
+					{% include "icons/plus.twig" with { fill: '#ffe5b8' } %}
 				</span>
 			</div>
 		{% endif %}
