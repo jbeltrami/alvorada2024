@@ -1,3 +1,7 @@
+{% set regularPrice = post._regular_price %}
+{% set salePrice = post._sale_price %}
+{% set finalPrice = post._price %}
+
 {% block content %}
 	<div class="col-lg-3 col-md-6 single-product mb-4">
 		<a class="product-card card card-effect h-100" href="{{ post.link }}">
@@ -9,9 +13,26 @@
 					<p class="mb-0 text-mainBrown">
 						{{ post.title }}
 					</p>
-					<p class="mb-0 text-mainBrown">
-						{{post._price}}
-					</p>
+					{% if finalPrice != regularPrice %}
+						<div class="d-inline-flex flex-wrap">
+							<div class="text-mainBrown d-inline-block text-decoration-line-through">
+								R$
+								{{ regularPrice|replace({ '.': ',' }) }}
+							</div>
+							<div class="text-mainBrown">
+								|
+							</div>
+							<div class="text-mainBrown d-inline-block">
+								R$
+								{{salePrice|replace({ '.': ',' }) }}
+							</div>
+						</div>
+					{% else %}
+						<p class="mb-0 text-mainBrown">
+							R$
+							{{ finalPrice|replace({ '.': ',' }) }}
+						</p>
+					{% endif %}
 				</div>
 				<span>
 					{% include "icons/plus.twig" with { fill: '#ffe5b8' } %}
