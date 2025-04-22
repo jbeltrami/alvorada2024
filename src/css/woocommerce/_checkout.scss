@@ -2,22 +2,33 @@
 @use '../globals/utils';
 @use 'sass:color';
 
-.woocommerce-checkout {
+.woocommerce-cart {
+	a.checkout-button.button.alt.wc-forward {
+		background-color: vars.$redDk !important;
+		color: vars.$yellowMd !important;
+
+		&:hover,
+		&:focus {
+			background-color: vars.$yellowMd;
+			color: vars.$redDk;
+		}
+	}
+
 	#payment {
-		background: vars.$ice;
+		background: vars.$yellowLgt;
 
 		.woocommerce-privacy-policy-link {
-			color: vars.$mainBrown;
+			color: vars.$redDk;
 		}
 		.button {
 			@extend .cta_button;
 		}
 
 		div.payment_box {
-			background: color.adjust(vars.$ice, $lightness: -10%);
+			background: color.adjust(vars.$yellowLgt, $lightness: -10%);
 
 			&::before {
-				border-bottom-color: color.adjust(vars.$ice, $lightness: -10%);
+				border-bottom-color: color.adjust(vars.$yellowLgt, $lightness: -10%);
 			}
 		}
 	}

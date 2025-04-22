@@ -1,20 +1,18 @@
 {% extends 'base.twig' %}
 
+{% set regularPrice = product.regular_price %}
+{% set finalPrice = product.price %}
+{% set salePrice = product.sale_price %}
+
 {% block content %}
 
 	<article
-		itemscope
-		itemtype="http://schema.org/Product"
-		class="single-product-details {{ post.class }} container my-5">
+		itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }} container my-5">
 
 		{# Voltar para a loja #}
-		<div
-			class="row my-4">
-			<div
-				class="col-lg-10">
-				<a
-					class="cta_button"
-					href="{{ site.url }}/loja">
+		<div class="row my-4">
+			<div class="col-lg-10">
+				<a class="cta_button" href="{{ site.url }}/loja">
 					Voltar para a Loja
 				</a>
 			</div>
@@ -23,138 +21,98 @@
 		<div
 			class="row">
 			{# Carrossel #}
-			<div
-				class="entry-images col-lg-6">
+			<div class="entry-images col-lg-6">
 				{% if (post._product_image_gallery|split(',')|length) > 1 %}
-					<div
-						id="product-carousel"
-						class="carousel slide">
-						<div
-							class="carousel-indicators">
+					<div id="product-carousel" class="carousel slide">
+						<div class="carousel-indicators">
 							{% for img in post._product_image_gallery|split(',') %}
 								{% if loop.first %}
-									<button
-										type="button"
-										data-bs-target="#product-carousel"
-										data-bs-slide-to="0"
-										class="active"
-										aria-current="true"
-										aria-label="Slide 1"></button>
+									<button type="button" data-bs-target="#product-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 								{% else %}
-									<button
-										type="button"
-										data-bs-target="#product-carousel"
-										data-bs-slide-to="{{ loop.index0 }}" aria-label="Slide {{ loop.index }}"></button>
+									<button type="button" data-bs-target="#product-carousel" data-bs-slide-to="{{ loop.index0 }}" aria-label="Slide {{ loop.index }}"></button>
 								{% endif %}
 							{% endfor %}
 						</div>
 
-						<div
-							class="carousel-inner">
+						<div class="carousel-inner">
 							{% for img in post._product_image_gallery|split(',') %}
 								{% if loop.first %}
-									<div
-										class="carousel-item active">
+									<div class="carousel-item active">
 										{{ fn('wp_get_attachment_image', img, 'full') }}
 									</div>
 								{% else %}
-									<div
-										class="carousel-item">
+									<div class="carousel-item">
 										{{ fn('wp_get_attachment_image', img, 'full') }}
 									</div>
 								{% endif %}
 							{% endfor %}
 						</div>
-						<button
-							class="carousel-control-prev"
-							type="button"
-							data-bs-target="#product-carousel"
-							data-bs-slide="prev">
-							<span
-								class="carousel-control-prev-icon bg-dark rounded-circle"
-								style="background-size: 80% 100%"
-								aria-hidden="true"></span>
-							<i
-								classname="icon bi-envelope"></i>
-							<span
-								class="visually-hidden">
+						<button class="carousel-control-prev" type="button" data-bs-target="#product-carousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon bg-dark rounded-circle" style="background-size: 80% 100%" aria-hidden="true"></span>
+							<i classname="icon bi-envelope"></i>
+							<span class="visually-hidden">
 								Previous
 							</span>
 						</button>
-						<button
-							class="carousel-control-next"
-							type="button"
-							data-bs-target="#product-carousel"
-							data-bs-slide="next">
-							<span
-								class="carousel-control-next-icon bg-dark rounded-circle"
-								style="background-size: 80% 100%"
-								aria-hidden="true"></span>
-							<span
-								class="visually-hidden">
+						<button class="carousel-control-next" type="button" data-bs-target="#product-carousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon bg-dark rounded-circle" style="background-size: 80% 100%" aria-hidden="true"></span>
+							<span class="visually-hidden">
 								Next
 							</span>
 						</button>
 					</div>
 				{% else %}
-					<img
-						class="single-product__thumb"
-						src="{{ post.thumbnail.src('shop_single') }}"/>
+					<img class="single-product__thumb" src="{{ post.thumbnail.src('shop_single') }}"/>
 				{% endif %}
 			</div>
 
-			<div
-				class="content col-lg-5 offset-lg-1">
-				<h1
-					class="single-product__title">
+			<div class="content col-lg-5 offset-lg-1">
+				<h1 class="single-product__title">
 					{{ post.title }}
 				</h1>
-				<p
-					class="single-product__excerpt">
+				<p class="single-product__excerpt">
 					{{ post.post_excerpt }}
 				</p>
-				<p
-					class="single-product__price">
-					R$
-					{{
-            post._regular_price|replace({ '.': ',' })
-          }}
+				<p class="single-product__price">
+					{% if finalPrice != regularPrice %}
+						<span class="text-decoration-line-through">
+							R$
+							{{ regularPrice|replace({ '.': ',' }) }}
+						</span>
+						|
+						<span>
+							R$
+							{{salePrice|replace({ '.': ',' }) }}
+						</span>
+
+					{% else %}
+						<span>
+							R$
+							{{ finalPrice|replace({ '.': ',' }) }}
+						</span>
+					{% endif %}
+
+
 				</p>
-				<p
-					class="single-product__content">
+				<p class="single-product__content">
 					{{ post.content }}
 				</p>
 
 				<form
-					class="cart"
-					action="{{ function('esc_url', function('wc_get_cart_url')) }}" method="post"
-					enctype="multipart/form-data">
+					class="cart" action="{{ function('esc_url', function('wc_get_cart_url')) }}" method="post" enctype="multipart/form-data">
 					<!-- Hidden field for the product ID -->
 					<input
-					type="hidden"
-						name="add-to-cart"
-						value="{{ product.get_id }}">
+					type="hidden" name="add-to-cart" value="{{ product.get_id }}">
 
 					<!-- Quantity Selector -->
-					<div
-						class="d-flex  align-items-center justify-content-start gap-2 quantity">
-						<label
-							for="quantity_{{ product.get_id }}">
+					<div class="d-flex  align-items-center justify-content-start gap-2 quantity">
+						<label for="quantity_{{ product.get_id }}">
 							Quantidade:
 						</label>
-						<input
-							type="number"
-							id="quantity_{{ product.get_id }}"
-							class="input-text qty text "
-							name="quantity"
-							value="1"
-							min="1"
-							step="1">
+						<input type="number" id="quantity_{{ product.get_id }}" class="input-text qty text " name="quantity" value="1" min="1" step="1">
 					</div>
 
-					<button
-						type="submit"
-						class="cta_button my-3 single_add_to_cart_button">
+					<button type="submit" class="cta_button my-3 single_add_to_cart_button">
 						Adicionar ao carrinho
 					</button>
 				</form>
