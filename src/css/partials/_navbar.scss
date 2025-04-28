@@ -14,6 +14,16 @@
 .nav__utils {
 	padding-top: calc(vars.$spacer * 2);
 	padding-bottom: calc(vars.$spacer * 2);
+
+	li,
+	li a {
+		color: vars.$yellowLgt;
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			color: vars.$white;
+		}
+	}
 }
 
 .nav__global {
@@ -22,6 +32,11 @@
 
 	a {
 		color: vars.$mainBrown;
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			color: vars.$redDk;
+		}
 	}
 
 	.logo {
