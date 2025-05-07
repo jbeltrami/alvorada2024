@@ -9,7 +9,7 @@
 
 		li {
 			padding: 5px;
-			background-color: vars.$mainBrown;
+			background-color: vars.$redDk;
 			color: vars.$white;
 			min-width: 40px;
 			text-align: center;
@@ -29,12 +29,12 @@
 			}
 
 			&.current {
-				color: vars.$yellow;
+				color: vars.$yellowLgt;
 			}
 
 			&:hover {
 				a {
-					color: vars.$orange;
+					color: vars.$yellowLgt;
 				}
 			}
 		}
