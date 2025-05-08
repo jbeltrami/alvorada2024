@@ -31,11 +31,11 @@
 	padding-bottom: calc(vars.$spacer * 2);
 
 	a {
-		color: vars.$white;
+		color: vars.$redDk;
 		transition: color 0.3s ease-in-out;
 
 		&:hover {
-			color: vars.$redDk;
+			color: vars.$redLgt;
 		}
 	}
 
