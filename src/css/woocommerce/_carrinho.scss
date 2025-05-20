@@ -15,10 +15,26 @@ a.button.wc-forward {
 	}
 }
 
-.coupon {
-	display: none;
+.coupon,
+.woocommerce #content table.cart td.actions .coupon,
+.woocommerce table.cart td.actions .coupon,
+.woocommerce-page #content table.cart td.actions .coupon,
+.woocommerce-page table.cart td.actions .coupon {
+	display: flex;
+	width: 100%;
+	margin-bottom: 1rem;
 	.input-text {
-		width: 75%;
+		width: fit-content;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		gap: 1rem;
+
+		.input-text,
+		button {
+			width: 100% !important;
+		}
 	}
 }
 
