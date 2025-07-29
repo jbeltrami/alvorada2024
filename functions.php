@@ -25,6 +25,7 @@ include get_theme_file_path('/includes/woocommerce.php');
 include get_theme_file_path('/includes/front/enqueue.php');
 include get_theme_file_path('/includes/front/enqueue-editor.php');
 include get_theme_file_path('/includes/front/allowed-blocks.php');
+include get_theme_file_path('/includes/front/block-comments.php');
 
 
 // Include Blocks
