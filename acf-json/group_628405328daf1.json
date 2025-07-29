@@ -80,11 +80,16 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
+                    "post_type": [
+                        "post"
+                    ],
+                    "post_status": "",
                     "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
                     "return_format": "object",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 1,
+                    "bidirectional": 0,
                     "ui": 1,
                     "bidirectional_target": [],
                     "parent_repeater": "field_6284053ed8ad8"
@@ -110,5 +115,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736534058
+    "modified": 1753822220
 }
