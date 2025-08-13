@@ -14,6 +14,8 @@
 .nav__utils {
 	padding-top: calc(vars.$spacer * 2);
 	padding-bottom: calc(vars.$spacer * 2);
+	display: flex;
+	flex-wrap: wrap;
 
 	li,
 	li a {
@@ -41,6 +43,10 @@
 
 	.logo {
 		max-width: vars.rem-calc(305);
+
+		@media (max-width: 576px) {
+			max-width: vars.rem-calc(200);
+		}
 	}
 }
 
