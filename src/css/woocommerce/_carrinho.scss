@@ -19,24 +19,35 @@ a.button.wc-forward {
 .woocommerce #content table.cart td.actions .coupon,
 .woocommerce table.cart td.actions .coupon,
 .woocommerce-page #content table.cart td.actions .coupon,
-.woocommerce-page table.cart td.actions .coupon {
-	display: flex;
-	width: 100%;
-	margin-bottom: 1rem;
-	.input-text {
-		width: fit-content;
-	}
-
-	@media (max-width: 768px) {
-		flex-direction: column;
-		gap: 1rem;
-
-		.input-text,
-		button {
-			width: 100% !important;
-		}
-	}
+.woocommerce-page table.cart td.actions .coupon,
+.woocommerce-shipping-totals .shipping,
+.woocommerce-shipping-totals,
+.shipping {
+	display: none !important;
 }
+
+// .coupon,
+// .woocommerce #content table.cart td.actions .coupon,
+// .woocommerce table.cart td.actions .coupon,
+// .woocommerce-page #content table.cart td.actions .coupon,
+// .woocommerce-page table.cart td.actions .coupon {
+// 	display: flex;
+// 	width: 100%;
+// 	margin-bottom: 1rem;
+// 	.input-text {
+// 		width: fit-content;
+// 	}
+
+// 	@media (max-width: 768px) {
+// 		flex-direction: column;
+// 		gap: 1rem;
+
+// 		.input-text,
+// 		button {
+// 			width: 100% !important;
+// 		}
+// 	}
+// }
 
 .woocommerce-message,
 .woocommerce-info {
